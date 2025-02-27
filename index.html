@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <title>Jobney | Job Application Tracking Made Simple</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Simplify your job search with Jobney - Track applications, manage interviews, and organize tasks all in one place. The smart way to manage your job applications.">
+    <meta name="keywords" content="job tracking, job application manager, interview scheduler, career management, job search organizer, application tracking system, job hunting app, career tools, interview preparation, job seeker app">
+    <meta name="author" content="Jobney">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Jobney | Job Application Tracking Made Simple">
+    <meta property="og:description" content="Simplify your job search with Jobney - Track applications, manage interviews, and organize tasks all in one place.">
+    <meta property="og:image" content="assets/img/og-image.jpg">
+    <meta property="og:url" content="https://jobney.app">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jobney | Job Application Tracking Made Simple">
+    <meta name="twitter:description" content="Simplify your job search with Jobney - Track applications, manage interviews, and organize tasks all in one place.">
+    <meta name="twitter:image" content="assets/img/og-image.jpg">
+    
+    <!-- App Meta Tags -->
+    <meta name="application-name" content="Jobney">
+    <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID">
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Theme switcher (color modes) -->
+    <script src="assets/js/theme-switcher.js"></script>
+
+    <!-- Favicon and Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#6366f1">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Vendor Styles -->
+    <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
+
+    <!-- Main Theme Styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+
+    <!-- Page loading styles -->
+    <style>.page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      [data-bs-theme="dark"] .page-loading {
+        background-color: #0b0f19;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #9397ad;
+      }
+      [data-bs-theme="dark"] .page-loading-inner > span {
+        color: #fff;
+        opacity: .6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        border: .15em solid #b4b7c9;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      [data-bs-theme="dark"] .page-spinner {
+        border-color: rgba(255,255,255,.4);
+        border-right-color: transparent;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+    <!-- Page loading scripts -->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 1000);
+        };
+      })();
+    </script>
+  </head>
+
+
+  <!-- Body -->
+  <body>
+
+    <!-- Page loading spinner -->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
+    </div>
+
+
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+
+
+      <!-- Navbar -->
+      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
+      <header class="header navbar navbar-expand-lg position-absolute navbar">
+        <div class="container px-3">
+          <a href="index.html" class="navbar-brand pe-3">
+            <img src="assets/img/logo.png" width="47" alt="Jobney">
+            Jobney
+          </a>
+          <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+              <h5 class="offcanvas-title">Menu</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            
+            <div class="offcanvas-header border-top">
+              <a href="#" class="btn btn-primary w-100">
+                <i class="bx bxl-apple fs-4 lh-1 me-1"></i>
+                &nbsp;Download Now
+              </a>
+            </div>      
+          </div>
+          <div class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4" data-bs-toggle="mode">
+            <input type="checkbox" class="form-check-input" id="theme-mode">
+            <label class="form-check-label d-none d-sm-block" for="theme-mode">Light</label>
+            <label class="form-check-label d-none d-sm-block" for="theme-mode">Dark</label>
+          </div>
+          <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a href="#" class="btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex">
+            <i class="bx bxl-apple fs-5 lh-1 me-1"></i>
+            &nbsp;Download Now
+          </a>
+        </div>
+      </header>
+
+
+      <!-- Hero -->
+      <section class="overflow-hidden pt-5" style="background: radial-gradient(116.18% 118% at 50% 100%, rgba(99, 102, 241, 0.1) 0%, rgba(218, 70, 239, 0.05) 41.83%, rgba(241, 244, 253, 0.07) 82.52%);">
+        <div class="container pt-3 pt-sm-4 pt-xl-5">
+          <div class="row pt-md-2 pt-lg-5">
+            <div class="col-md-5 d-flex flex-column mt-md-4 pt-5 pb-3 pb-sm-4 py-md-5">
+              <h1 class="display-4 text-center text-md-start mb-4">Navigate Your Job Search with <span class="text-primary">Jobney</span></h1>
+              <p class="fs-lg text-center text-md-start pb-2 pb-md-3 mb-4 mb-lg-5">Track applications, manage interviews, and schedule tasks all in one place. Never miss an opportunity with Jobney.</p>
+              <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-md-start">
+                <a href="#" class="btn btn-dark btn-lg px-3 py-2 me-sm-3 me-lg-4 mb-3">
+                  <img src="assets/img/market/appstore-light.svg" class="light-mode-img" width="124" alt="App Store">
+                  <img src="assets/img/market/appstore-dark.svg" class="dark-mode-img" width="124" alt="App Store">
+                </a>
+              </div>
+              <div class="position-relative d-inline-flex align-items-center justify-content-center justify-content-md-start mt-auto pt-3 pt-md-4 pb-xl-2">
+                <a href="#features" class="btn btn-icon btn-light bg-white stretched-link rounded-circle me-3" data-scroll data-scroll-offset="120" aria-label="Scroll for more">
+                  <i class="bx bx-chevron-down"></i>
+                </a>
+                <span class="fs-sm">Discover more</span>
+              </div>     
+            </div>
+            <div class="col-md-7 align-self-end">
+              <div class="position-relative overflow-hidden mt-4 pb-3 pt-4 mx-auto me-md-0" style="max-width: 632px;">
+                <div class="ratio ratio-1x1"></div>
+                <img src="assets/img/landing/app-showcase-1/hero-phone-1.png" class="rellax position-absolute top-0 start-0 zindex-2"  data-rellax-speed="1.6" data-disable-parallax-down="md" alt="Phone">
+                <img src="assets/img/landing/app-showcase-1/hero-phone-2.png" class="rellax position-absolute top-0 start-0"  data-rellax-speed="2.8" data-disable-parallax-down="md" alt="Phone">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Brands (carousel on screens < 1100px) -->
+      <section class="container py-5 mt-md-2 mt-lg-4">
+        <div class="swiper pt-2 mx-n2" data-swiper-options='{
+          "slidesPerView": 2,
+          "pagination": {
+            "el": ".swiper-pagination",
+            "clickable": true
+          },
+          "breakpoints": {
+            "500": {
+              "slidesPerView": 3,
+              "spaceBetween": 8
+            },
+            "650": {
+              "slidesPerView": 4,
+              "spaceBetween": 8
+            },
+            "900": {
+              "slidesPerView": 5,
+              "spaceBetween": 8
+            },
+            "1100": {
+              "slidesPerView": 6,
+              "spaceBetween": 8
+            }
+          }
+        }'>
+          
+
+          <!-- Pagination (bullets) -->
+          <div class="swiper-pagination position-relative pt-2 mt-4"></div>
+        </div>
+      </section>
+
+
+      <!-- Features -->
+      <section id="features" class="container pt-lg-2 pt-xl-3 pb-3 pb-xl-5 mt-n2 mt-sm-0 mb-2 mb-md-4 mb-lg-5">
+        <div class="row pb-xl-3">
+
+          <!-- Parallax gfx -->
+          <div class="col-lg-5 d-none d-lg-block">
+            <div class="position-relative" style="max-width: 348px;">
+              <img src="assets/img/landing/app-showcase-1/features/phone.png" alt="Phone">
+              <div class="rellax position-absolute top-0" data-rellax-vertical-scroll-axis="x" data-rellax-horizontal-speed="0.75" data-disable-parallax-down="lg" style="max-width: 348px; right: -2.75rem;">
+                <img src="assets/img/landing/app-showcase-1/features/card.png" alt="Card">
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature list -->
+          <div class="col-lg-7">
+            <h2 class="h1 text-center text-md-start mb-4">Powerful Features for Job Seekers</h2>
+            <p class="fs-lg text-muted text-center text-md-start mb-4 mb-xl-5">Stay organized and confident throughout your job search journey with our comprehensive tracking and scheduling tools.</p>
+            <div class="row row-cols-1 row-cols-sm-2 pt-2 pt-sm-3 pt-xl-2">
+
+              <!-- Item -->
+              <div class="col pb-2 pb-xl-0 mb-4 mb-xl-5">
+                <div class="d-flex align-items-start pe-xl-3">
+                  <div class="d-table bg-secondary rounded-3 flex-shrink-0 p-3 mb-3" style="width: 80px; height: 80px;">
+                    <img src="assets/img/landing/app-showcase-1/features/tracking.png" alt="Tracking" class="d-block w-100">
+                  </div>
+                  <div class="ps-4 ps-sm-3 ps-md-4">
+                    <h3 class="h5 pb-1 mb-2">Application Tracking</h3>
+                    <p class="mb-0">Keep track of every job application, status, and follow-up in one organized dashboard.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div class="col pb-2 pb-xl-0 mb-4 mb-xl-5">
+                <div class="d-flex align-items-start ps-xl-3">
+                  <div class="d-table bg-secondary rounded-3 flex-shrink-0 p-3 mb-3" style="width: 80px; height: 80px;">
+                    <img src="assets/img/landing/app-showcase-1/features/calendar.png" alt="Calendar" class="d-block w-100">
+                  </div>
+                  <div class="ps-4 ps-sm-3 ps-md-4">
+                    <h3 class="h5 pb-1 mb-2">Event Scheduler</h3>
+                    <p class="mb-0">Schedule and manage interviews, follow-ups, and important deadlines with ease.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div class="col pb-2 pb-xl-0 mb-4 mb-xl-5">
+                <div class="d-flex align-items-start pe-xl-3">
+                  <div class="d-table bg-secondary rounded-3 flex-shrink-0 p-3 mb-3" style="width: 80px; height: 80px;">
+                    <img src="assets/img/landing/app-showcase-1/features/task.png" alt="Tasks" class="d-block w-100">
+                  </div>
+                  <div class="ps-4 ps-sm-3 ps-md-4">
+                    <h3 class="h5 pb-1 mb-2">Task Management</h3>
+                    <p class="mb-0">Break down your job search into manageable tasks and never miss a deadline.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div class="col pb-2 pb-xl-0 mb-4 mb-xl-5">
+                <div class="d-flex align-items-start ps-xl-3">
+                  <div class="d-table bg-secondary rounded-3 flex-shrink-0 p-3 mb-3" style="width: 80px; height: 80px;">
+                    <img src="assets/img/landing/app-showcase-1/features/analytics.png" alt="Analytics" class="d-block w-100">
+                  </div>
+                  <div class="ps-4 ps-sm-3 ps-md-4">
+                    <h3 class="h5 pb-1 mb-2">Smart Analytics</h3>
+                    <p class="mb-0">Track your application activity, analyze trends, and gain valuable compensation insights to optimize your job search strategy.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- How it works (Slider) -->
+      <section class="position-relative bg-secondary py-5">
+        <div class="container mt-3 pt-md-2 pt-lg-4 pb-2 pb-md-4 pb-lg-5">
+          <h2 class="h1 text-center pb-2 pb-md-0 mb-4 mb-md-5">How Does It Work?</h2>
+          <div class="position-relative mx-5">
+
+            <!-- Slider prev/next buttons -->
+            <button type="button" id="prev-screen" class="btn btn-prev btn-icon position-absolute top-50 start-0 ms-n5 translate-middle-y" aria-label="Previous">
+              <i class="bx bx-chevron-left"></i>
+            </button>
+            <button type="button" id="next-screen" class="btn btn-next btn-icon position-absolute top-50 end-0 me-n5 translate-middle-y" aria-label="Next">
+              <i class="bx bx-chevron-right"></i>
+            </button>
+
+            <!-- Phone frame -->
+            <div class="position-absolute top-0 start-50 translate-middle-x h-100 w-100 w-md-33 zindex-5">
+              <div class="d-flex bg-repeat-0 bg-size-cover w-100 h-100 mx-auto" style="max-width: 328px; background-image: url(assets/img/landing/app-showcase-1/screens/phone-frame.png);"></div>
+            </div>
+
+            <!-- Phone screen -->
+            <div class="position-absolute top-0 start-50 translate-middle-x h-100 w-100 w-md-33">
+              <div class="d-flex bg-repeat-0 bg-size-cover w-100 h-100 mx-auto" style="max-width: 328px; background-image: url(assets/img/landing/app-showcase-1/screens/phone-screen.png);"></div>
+            </div>
+
+            <!-- Swiper slider -->
+            <div class="swiper mobile-app-slider" data-swiper-options='{
+              "slidesPerView": 1,
+              "centeredSlides": true,
+              "loop": true,
+              "tabs": true,
+              "pagination": {
+                "el": "#swiper-progress",
+                "type": "progressbar"
+              },
+              "navigation": {
+                "prevEl": "#prev-screen",
+                "nextEl": "#next-screen"
+              },
+              "breakpoints": {
+                "768": { "slidesPerView": 3 }
+              }
+            }'>
+              <div class="swiper-wrapper">
+
+                <!-- Item -->
+                <div class="swiper-slide" data-swiper-tab="#text-1">
+                  <img src="assets/img/landing/app-showcase-1/screens/01.png" class="d-block mx-auto" width="328" alt="Screen">
+                </div>
+
+                <!-- Item -->
+                <div class="swiper-slide" data-swiper-tab="#text-2">
+                  <img src="assets/img/landing/app-showcase-1/screens/02.png" class="d-block mx-auto" width="328" alt="Screen">
+                </div>
+
+                <!-- Item -->
+                <div class="swiper-slide" data-swiper-tab="#text-3">
+                  <img src="assets/img/landing/app-showcase-1/screens/03.png" class="d-block mx-auto" width="328" alt="Screen">
+                </div>
+
+                <!-- Item -->
+                <div class="swiper-slide" data-swiper-tab="#text-4">
+                  <img src="assets/img/landing/app-showcase-1/screens/04.png" class="d-block mx-auto" width="328" alt="Screen">
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Swiper tabs (Description text) -->
+          <div class="row justify-content-center pt-4 mt-2 mt-md-3">
+            <div class="swiper-tabs col-xl-6 col-lg-7 col-md-8 text-center">
+
+              <!-- Text 1 -->
+              <div id="text-1" class="swiper-tab active">
+                <h3 class="h4 pb-1 mb-2">Step 1. Add New Applications</h3>
+                <p class="mb-0">Start by adding your job applications to Jobney. Input company details, position, application date, and any relevant notes. Keep everything organized in one place.</p>
+              </div>
+
+              <!-- Text 2 -->
+              <div id="text-2" class="swiper-tab">
+                <h3 class="h4 pb-1 mb-2">Step 2. Track Application Status</h3>
+                <p class="mb-0">Update the status of your applications as you progress. From 'Applied' to 'Interview Scheduled' to 'Offer Received', stay on top of every stage.</p>
+              </div>
+
+              <!-- Text 3 -->
+              <div id="text-3" class="swiper-tab">
+                <h3 class="h4 pb-1 mb-2">Step 3. Schedule Events & Tasks</h3>
+                <p class="mb-0">Set up interview reminders, follow-up tasks, and application deadlines. Our calendar integration ensures you never miss an important date.</p>
+              </div>
+
+              <!-- Text 4 -->
+              <div id="text-4" class="swiper-tab">
+                <h3 class="h4 pb-1 mb-2">Step 4. Monitor Your Progress</h3>
+                <p class="mb-0">View insights about your job search journey, track success rates, and identify which strategies are working best for you.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider progress -->
+        <div id="swiper-progress" class="swiper-pagination bottom-0" style="top: auto;"></div>
+      </section>
+
+
+       <!-- FAQ -->
+       <section class="container py-5 mb-lg-2">
+        <div class="row py-2 py-md-4 py-lg-5">
+          <div class="col-xl-4 col-md-5 text-center text-md-start pt-md-2 pb-2 pb-md-0 mb-4 mb-md-0">
+            <h2 class="pb-3 mb-1 mb-lg-3">Have questions? <br class="d-none d-md-inline">We've got answers</h2>
+            <p class="fs-lg pb-3 mb-2 mb-lg-3">Everything you need to know about Jobney's job tracking features.</p>
+            <div class="row row-cols-1 row-cols-sm-2 g-3 g-sm-4">
+              <div class="col">
+                <div class="card card-hover">
+                  <div class="card-body pb-3">
+                    <i class="bx bxs-phone-call d-block fs-2 text-primary mb-2 py-1"></i>
+                    <p class="fs-sm mb-2">Still have  questions?</p>
+                    <a href="#" class="btn btn-link stretched-link px-0">
+                      Call us
+                      <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card card-hover">
+                  <div class="card-body pb-3">
+                    <i class="bx bx-message-rounded-dots d-block fs-2 text-success mb-2 py-1"></i>
+                    <p class="fs-sm mb-2">Still have  questions?</p>
+                    <a href="#" class="btn btn-link text-success stretched-link px-0">
+                      Chat with us
+                      <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-7 offset-xl-1">
+            <div class="accordion" id="faq">
+              <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                <h2 class="accordion-header" id="q1-heading">
+                  <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q1" aria-expanded="true" aria-controls="q1">
+                    How do I start tracking my job applications?
+                  </button>
+                </h2>
+                <div id="q1" class="accordion-collapse collapse show" aria-labelledby="q1-heading" data-bs-parent="#faq">
+                  <div class="accordion-body fs-sm pt-0">
+                    <p>Getting started with Jobney is simple. Just tap the "+" button to add a new application, enter the company name, position, application date, and any notes. You can then update the status as you progress through the application process. All your applications will be visible on your dashboard for easy tracking.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                <h2 class="accordion-header" id="q2-heading">
+                  <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2" aria-expanded="false" aria-controls="q2">
+                    Can I set reminders for interviews and follow-ups?
+                  </button>
+                </h2>
+                <div id="q2" class="accordion-collapse collapse" aria-labelledby="q2-heading" data-bs-parent="#faq">
+                  <div class="accordion-body fs-sm pt-0">
+                    <p>Yes! Jobney integrates with your calendar to help you stay on top of important dates. You can set reminders for interviews, follow-up emails, and application deadlines. The app will notify you based on your preferred notification settings.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                <h2 class="accordion-header" id="q3-heading">
+                  <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3" aria-expanded="false" aria-controls="q3">
+                    How does the task management feature work?
+                  </button>
+                </h2>
+                <div id="q3" class="accordion-collapse collapse" aria-labelledby="q3-heading" data-bs-parent="#faq">
+                  <div class="accordion-body fs-sm pt-0">
+                    <p>The task management feature allows you to break down your job search into manageable steps. Create tasks like "Update Resume," "Research Company," or "Send Thank You Email." You can set due dates, mark tasks as complete, and organize them by application or as general job search tasks.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                <h2 class="accordion-header" id="q4-heading">
+                  <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4" aria-expanded="false" aria-controls="q4">
+                    Is my application data secure?
+                  </button>
+                </h2>
+                <div id="q4" class="accordion-collapse collapse" aria-labelledby="q4-heading" data-bs-parent="#faq">
+                  <div class="accordion-body fs-sm pt-0">
+                    <p>Absolutely. Your data security is our top priority. All application information is stored securely and is only accessible through your authenticated account. We use industry-standard encryption to protect your sensitive information.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                <h2 class="accordion-header" id="q5-heading">
+                  <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5" aria-expanded="false" aria-controls="q5">
+                    Can I track multiple job searches at once?
+                  </button>
+                </h2>
+                <div id="q5" class="accordion-collapse collapse" aria-labelledby="q5-heading" data-bs-parent="#faq">
+                  <div class="accordion-body fs-sm pt-0">
+                    <p>Yes, Jobney is designed to handle multiple job searches simultaneously. You can organize applications by categories, companies, or positions. This makes it easy to manage applications across different industries or job types.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item border-0 rounded-3 shadow-sm">
+                <h2 class="accordion-header" id="q6-heading">
+                  <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q6" aria-expanded="false" aria-controls="q6">
+                    Can I export my application data?
+                  </button>
+                </h2>
+                <div id="q6" class="accordion-collapse collapse" aria-labelledby="q6-heading" data-bs-parent="#faq">
+                  <div class="accordion-body fs-sm pt-0">
+                    <p>Yes, you can export your application data for backup or analysis. Jobney allows you to export your data in common formats, making it easy to keep records or create custom reports of your job search progress.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- Footer -->
+    <footer class="footer pt-5 pb-4 pb-lg-5">
+      <div class="container text-center pt-lg-3">
+        <div class="navbar-brand justify-content-center text-dark mb-2 mb-lg-4">
+          <img src="assets/img/logo.png" class="me-2" width="60" alt="Jobney">
+          <span class="fs-4">Jobney</span>
+        </div>
+        <div class="d-flex flex-column flex-sm-row justify-content-center">
+          <a href="#" class="btn btn-dark btn-lg px-3 py-2 me-sm-4 mb-3">
+            <img src="assets/img/market/appstore-light.svg" class="light-mode-img" width="124" alt="App Store">
+            <img src="assets/img/market/appstore-dark.svg" class="dark-mode-img" width="124" alt="App Store">
+          </a>
+        </div>
+        <p class="nav d-block fs-sm text-center pt-5 mt-lg-4 mb-0">
+          <span class="opacity-80">&copy; 2025 Jobney. All rights reserved.</span>
+        </p>
+      </div>
+    </footer>
+
+
+    <!-- Back to top button -->
+    <a href="#top" class="btn-scroll-top" data-scroll>
+      <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+      <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+    </a>
+
+
+    <!-- Vendor Scripts -->
+    <script src="assets/vendor/rellax/rellax.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main Theme Script -->
+    <script src="assets/js/theme.min.js"></script>
+  </body></html>

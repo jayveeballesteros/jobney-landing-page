@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <title>Terms of Service | Jobney</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Read Jobney's terms of service to understand the rules and guidelines for using our job application tracking app. Clear and transparent terms for job seekers.">
+    <meta name="keywords" content="terms of service, user agreement, app terms, legal terms, job application terms">
+    <meta name="author" content="Jobney">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Terms of Service | Jobney">
+    <meta property="og:description" content="Read Jobney's terms of service to understand the rules and guidelines for using our job application tracking app.">
+    <meta property="og:image" content="assets/img/og-image.jpg">
+    <meta property="og:url" content="https://jobney.app/terms-of-service">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Terms of Service | Jobney">
+    <meta name="twitter:description" content="Read Jobney's terms of service to understand the rules and guidelines for using our job application tracking app.">
+    <meta name="twitter:image" content="assets/img/og-image.jpg">
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Theme switcher (color modes) -->
+    <script src="assets/js/theme-switcher.js"></script>
+
+    <!-- Favicon and Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#6366f1">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Vendor Styles -->
+    <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
+    <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
+
+    <!-- Main Theme Styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+
+    <!-- Page loading styles -->
+    <style>
+        .page-loading {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-transition: all .4s .2s ease-in-out;
+            transition: all .4s .2s ease-in-out;
+            background-color: #fff;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 9999;
+        }
+
+        [data-bs-theme="dark"] .page-loading {
+            background-color: #0b0f19;
+        }
+
+        .page-loading.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .page-loading-inner {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            -webkit-transition: opacity .2s ease-in-out;
+            transition: opacity .2s ease-in-out;
+            opacity: 0;
+        }
+
+        .page-loading.active>.page-loading-inner {
+            opacity: 1;
+        }
+
+        .page-loading-inner>span {
+            display: block;
+            font-size: 1rem;
+            font-weight: normal;
+            color: #9397ad;
+        }
+
+        [data-bs-theme="dark"] .page-loading-inner>span {
+            color: #fff;
+            opacity: .6;
+        }
+
+        .page-spinner {
+            display: inline-block;
+            width: 2.75rem;
+            height: 2.75rem;
+            margin-bottom: .75rem;
+            vertical-align: text-bottom;
+            border: .15em solid #b4b7c9;
+            border-right-color: transparent;
+            border-radius: 50%;
+            -webkit-animation: spinner .75s linear infinite;
+            animation: spinner .75s linear infinite;
+        }
+
+        [data-bs-theme="dark"] .page-spinner {
+            border-color: rgba(255, 255, 255, .4);
+            border-right-color: transparent;
+        }
+
+        @-webkit-keyframes spinner {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spinner {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        .mode-icon {
+            transition: opacity 0.25s ease-in-out;
+        }
+
+        .mode-icon.light {
+            opacity: 0;
+        }
+
+        .mode-icon.dark {
+            opacity: 1;
+        }
+
+        [data-bs-theme="dark"] .mode-icon.light {
+            opacity: 1;
+        }
+
+        [data-bs-theme="dark"] .mode-icon.dark {
+            opacity: 0;
+        }
+    </style>
+
+    <!-- Page loading scripts -->
+    <script>
+        (function() {
+            window.onload = function() {
+                const preloader = document.querySelector('.page-loading');
+                preloader.classList.remove('active');
+                setTimeout(function() {
+                    preloader.remove();
+                }, 1000);
+            };
+        })();
+    </script>
+</head>
+
+
+<!-- Body -->
+
+<body>
+
+    <!-- Page loading spinner -->
+    <div class="page-loading active">
+        <div class="page-loading-inner">
+            <div class="page-spinner"></div><span>Loading...</span>
+        </div>
+    </div>
+
+
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+
+
+        <!-- Navbar -->
+        <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
+        <header class="header navbar navbar-expand-lg bg-light navbar">
+            <div class="container px-3">
+                <a href="index.html" class="navbar-brand pe-3">
+                    <img src="assets/img/logo.png" width="47" alt="Jobney">
+                    Jobney
+                </a>
+                <div class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4" data-bs-toggle="mode">
+                    <input type="checkbox" class="form-check-input" id="theme-mode">
+                    <i class="bx bx-sun position-absolute top-50 start-0 translate-middle-y ms-n3 mode-icon light"></i>
+                    <i class="bx bx-moon position-absolute top-50 end-0 translate-middle-y me-n3 mode-icon dark"></i>
+                </div>
+                <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a href="#" class="btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex">
+                    <i class="bx bxl-apple fs-5 lh-1 me-1"></i>
+                    &nbsp;Download Now
+                </a>
+            </div>
+        </header>
+
+
+        <!-- Breadcrumb -->
+        <nav class="container pt-4 mt-lg-3" aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item">
+                    <a href="index.html"><i class="bx bx-home-alt fs-lg me-1"></i>Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Terms of Service</li>
+            </ol>
+        </nav>
+
+
+        <!-- Post title + Meta  -->
+        <section class="container mt-4 pt-lg-2 pb-3">
+            <h1 class="pb-3" style="max-width: 970px;">Terms of Service</h1>
+        </section>
+
+        <!-- Post content + Sharing -->
+        <section class="container mb-5 pt-4 pb-2 py-mg-4">
+            <div class="row">
+                <!-- Content -->
+                <div class="col-12">
+                    <h3 class="h5 mb-4 pb-2 fw-medium">These Terms of Service ("Terms") govern your use of the Jobney app (hereby referred to as "Application") provided by Jobney (hereby referred to as "Service Provider"). By accessing or using the Application, you agree to be bound by these Terms.</h3>
+
+                    <h2 class="h4">1. Acceptance of Terms</h2>
+                    <p class="mb-4 pb-2">By using the Application, you agree to comply with and be bound by these Terms. If you do not agree to these Terms, you should not use the Application.</p>
+
+                    <h2 class="h4">2. Changes to Terms</h2>
+                    <p class="mb-4 pb-2">The Service Provider reserves the right to modify these Terms at any time. Any changes will be effective immediately upon posting the updated Terms on this page. Your continued use of the Application following the posting of changes constitutes your acceptance of such changes.</p>
+
+                    <h2 class="h4">3. Use of the Application</h2>
+                    <p class="mb-4 pb-2">You agree to use the Application in accordance with all applicable laws and regulations. You are responsible for ensuring that your use of the Application does not violate any laws or regulations.</p>
+
+                    <h2 class="h4">4. Intellectual Property</h2>
+                    <p class="mb-4 pb-2">All content and materials available through the Application, including but not limited to text, graphics, logos, and images, are the property of the Service Provider and are protected by intellectual property laws. You may not use, reproduce, or distribute any content from the Application without prior written permission from the Service Provider.</p>
+
+                    <!-- Continue with remaining sections following same pattern -->
+                    
+                    <h2 class="h4">Contact Information</h2>
+                    <p class="mb-4 pb-2">If you have any questions about these Terms or the Application, please contact us through our support channels in the app.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Back to top button -->
+    <a href="#top" class="btn-scroll-top" data-scroll>
+        <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+        <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer pt-5 pb-4 pb-lg-5">
+        <p class="nav d-block fs-sm text-center pt-5 mt-lg-4 mb-0">
+            <span class="opacity-80">&copy; 2025 Jobney. All rights reserved.</span>
+        </p>
+    </footer>
+
+    <!-- Vendor Scripts -->
+    <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+    <script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
+    <script src="assets/vendor/lightgallery/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="assets/vendor/lightgallery/plugins/fullscreen/lg-fullscreen.min.js"></script>
+    <script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main Theme Script -->
+    <script src="assets/js/theme.min.js"></script>
+</body>
+
+</html>
