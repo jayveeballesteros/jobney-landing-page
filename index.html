@@ -393,8 +393,58 @@
       <section class="position-relative bg-secondary py-5">
         <div class="container mt-3 pt-md-2 pt-lg-4 pb-2 pb-md-4 pb-lg-5">
           <h2 class="h1 text-center pb-2 pb-md-0 mb-4 mb-md-5">How Does It Work?</h2>
-          <div class="position-relative mx-5">
+          
+          <style>
+            /* Phone frame and screenshots responsive scaling */
+            .phone-frame-container {
+              max-width: 328px;
+              width: 100%;
+              margin: 0 auto;
+              transition: all 0.3s ease;
+            }
+            
+            /* Ensure screenshots match phone frame size exactly */
+            .screenshot-container {
+              position: relative;
+              width: 100%;
+              height: 100%;
+            }
+            
+            .screenshot-container img {
+              width: 100%;
+              height: auto;
+              position: relative;
+            }
+            
+            /* Responsive scaling */
+            @media (max-width: 575.98px) {
+              .phone-frame-container {
+                max-width: 280px;
+              }
+              .mobile-app-slider {
+                width: 280px !important;
+                margin: 0 auto;
+              }
+              .mobile-app-slider .swiper-slide {
+                width: 280px !important;
+              }
+            }
+            
+            @media (max-width: 374.98px) {
+              .phone-frame-container {
+                max-width: 240px;
+              }
+              .mobile-app-slider {
+                width: 240px !important;
+                margin: 0 auto;
+              }
+              .mobile-app-slider .swiper-slide {
+                width: 240px !important;
+              }
+            }
+          </style>
 
+          <div class="position-relative mx-5">
             <!-- Slider prev/next buttons -->
             <button type="button" id="prev-screen" class="btn btn-prev btn-icon position-absolute top-50 start-0 ms-n5 translate-middle-y" aria-label="Previous">
               <i class="bx bx-chevron-left"></i>
@@ -405,8 +455,10 @@
 
             <!-- Phone frame -->
             <div class="position-absolute top-0 start-50 translate-middle-x h-100 w-100 w-md-33 zindex-5">
-              <div class="d-flex bg-repeat-0 bg-size-cover w-100 h-100 mx-auto" style="max-width: 328px;">
-                <img src="assets/img/landing/app-showcase-1/screens/phone-frame.png" class="w-100" alt="Phone frame">
+              <div class="phone-frame-container">
+                <div class="d-flex bg-repeat-0 bg-size-cover w-100 h-100">
+                  <img src="assets/img/landing/app-showcase-1/screens/phone-frame.png" class="w-100" alt="Phone frame">
+                </div>
               </div>
             </div>
 
@@ -432,41 +484,51 @@
 
                 <!-- Item -->
                 <div class="swiper-slide" data-swiper-tab="#text-1">
-                  <div class="position-relative d-block mx-auto" style="width: 328px;">
-                    <img src="assets/img/landing/app-showcase-1/screens/01.png" class="light-mode-img w-100" alt="Screen">
-                    <img src="assets/img/landing/app-showcase-1/screens/01-dark.png" class="dark-mode-img w-100" alt="Screen">
+                  <div class="phone-frame-container">
+                    <div class="screenshot-container">
+                      <img src="assets/img/landing/app-showcase-1/screens/01.png" class="light-mode-img" alt="Screen">
+                      <img src="assets/img/landing/app-showcase-1/screens/01-dark.png" class="dark-mode-img" alt="Screen">
+                    </div>
                   </div>
                 </div>
 
                 <!-- Item -->
                 <div class="swiper-slide" data-swiper-tab="#text-2">
-                  <div class="position-relative d-block mx-auto" style="width: 328px;">
-                    <img src="assets/img/landing/app-showcase-1/screens/02.png" class="light-mode-img w-100" alt="Screen">
-                    <img src="assets/img/landing/app-showcase-1/screens/02-dark.png" class="dark-mode-img w-100" alt="Screen">
+                  <div class="phone-frame-container">
+                    <div class="screenshot-container">
+                      <img src="assets/img/landing/app-showcase-1/screens/02.png" class="light-mode-img" alt="Screen">
+                      <img src="assets/img/landing/app-showcase-1/screens/02-dark.png" class="dark-mode-img" alt="Screen">
+                    </div>
                   </div>
                 </div>
 
                 <!-- Item -->
                 <div class="swiper-slide" data-swiper-tab="#text-3">
-                  <div class="position-relative d-block mx-auto" style="width: 328px;">
-                    <img src="assets/img/landing/app-showcase-1/screens/03.png" class="light-mode-img w-100" alt="Screen">
-                    <img src="assets/img/landing/app-showcase-1/screens/03-dark.png" class="dark-mode-img w-100" alt="Screen">
+                  <div class="phone-frame-container">
+                    <div class="screenshot-container">
+                      <img src="assets/img/landing/app-showcase-1/screens/03.png" class="light-mode-img" alt="Screen">
+                      <img src="assets/img/landing/app-showcase-1/screens/03-dark.png" class="dark-mode-img" alt="Screen">
+                    </div>
                   </div>
                 </div>
 
                 <!-- Item -->
                 <div class="swiper-slide" data-swiper-tab="#text-4">
-                  <div class="position-relative d-block mx-auto" style="width: 328px;">
-                    <img src="assets/img/landing/app-showcase-1/screens/04.png" class="light-mode-img w-100" alt="Screen">
-                    <img src="assets/img/landing/app-showcase-1/screens/04-dark.png" class="dark-mode-img w-100" alt="Screen">
+                  <div class="phone-frame-container">
+                    <div class="screenshot-container">
+                      <img src="assets/img/landing/app-showcase-1/screens/04.png" class="light-mode-img" alt="Screen">
+                      <img src="assets/img/landing/app-showcase-1/screens/04-dark.png" class="dark-mode-img" alt="Screen">
+                    </div>
                   </div>
                 </div>
 
                 <!-- New Item -->
                 <div class="swiper-slide" data-swiper-tab="#text-5">
-                  <div class="position-relative d-block mx-auto" style="width: 328px;">
-                    <img src="assets/img/landing/app-showcase-1/screens/05.png" class="light-mode-img w-100" alt="Screen">
-                    <img src="assets/img/landing/app-showcase-1/screens/05-dark.png" class="dark-mode-img w-100" alt="Screen">
+                  <div class="phone-frame-container">
+                    <div class="screenshot-container">
+                      <img src="assets/img/landing/app-showcase-1/screens/05.png" class="light-mode-img" alt="Screen">
+                      <img src="assets/img/landing/app-showcase-1/screens/05-dark.png" class="dark-mode-img" alt="Screen">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -637,38 +699,6 @@
                 </h2>
                 <div id="q6" class="accordion-collapse collapse" aria-labelledby="q6-heading" data-bs-parent="#faq">
                   <div class="accordion-body fs-sm pt-0">
-                    <p>Yes, you can export your application data for backup or analysis. Jobney allows you to export your data in common formats, making it easy to keep records or create custom reports of your job search progress.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    <!-- Footer -->
-    <footer class="footer pt-5 pb-4 pb-lg-5">
-      <div class="container text-center pt-lg-3">
-        <div class="navbar-brand justify-content-center text-dark mb-2 mb-lg-4">
-          <img src="assets/img/logo.png" class="me-2" width="60" alt="Jobney">
-          <span class="fs-4">Jobney</span>
-        </div>
-        <div class="d-flex flex-column flex-sm-row justify-content-center">
-          <a href="#" class="btn btn-dark btn-lg px-3 py-2 me-sm-4 mb-3">
-            <img src="assets/img/market/appstore-light.svg" class="light-mode-img" width="124" alt="App Store">
-            <img src="assets/img/market/appstore-dark.svg" class="dark-mode-img" width="124" alt="App Store">
-          </a>
-        </div>
-        <p class="nav d-block fs-sm text-center pt-5 mt-lg-4 mb-0">
-          <span class="opacity-80">&copy; 2025 Jobney. All rights reserved.</span>
-        </p>
-      </div>
-    </footer>
-
-
-    <!-- Back to top button -->
-    <a href="#top" class="btn-scroll-top" data-scroll>
-      <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
       <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
     </a>
 
