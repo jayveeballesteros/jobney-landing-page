@@ -49,6 +49,33 @@
     <!-- Main Theme Styles + Bootstrap -->
     <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
 
+    <!-- Add smooth theme transition styles -->
+    <style>
+      /* Add transition to all elements for smooth theme switching */
+      *, ::before, ::after {
+        transition: background-color 0.3s ease-in-out,
+                    border-color 0.3s ease-in-out,
+                    color 0.3s ease-in-out,
+                    box-shadow 0.3s ease-in-out;
+      }
+
+      /* Exclude transitions from certain elements where it might cause issues */
+      .swiper-slide,
+      .navbar-toggler,
+      .form-check-input,
+      .btn-scroll-top,
+      .page-loading,
+      .page-loading * {
+        transition: none;
+      }
+
+      /* Smooth image switching for dark/light mode */
+      .light-mode-img,
+      .dark-mode-img {
+        transition: opacity 0.3s ease-in-out;
+      }
+    </style>
+
     <!-- Page loading styles -->
     <style>.page-loading {
         position: fixed;
@@ -201,7 +228,7 @@
           <div class="row pt-md-2 pt-lg-5">
             <div class="col-md-5 d-flex flex-column mt-md-4 pt-5 pb-3 pb-sm-4 py-md-5">
               <h1 class="display-4 text-center text-md-start mb-4">Navigate Your Job Search with <span class="text-primary">Jobney</span></h1>
-              <p class="fs-lg text-center text-md-start pb-2 pb-md-3 mb-4 mb-lg-5">Track applications, manage interviews, and schedule tasks all in one place. Never miss an opportunity with Jobney.</p>
+              <p class="fs-lg text-center text-md-start pb-2 pb-md-3 mb-4 mb-lg-5">Track applications, manage interviews, and create personalized message templates. Never miss an opportunity with Jobney.</p>
               <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-md-start">
                 <a href="#" class="btn btn-dark btn-lg px-3 py-2 me-sm-3 me-lg-4 mb-3">
                   <img src="assets/img/market/appstore-light.svg" class="light-mode-img" width="124" alt="App Store">
@@ -218,8 +245,10 @@
             <div class="col-md-7 align-self-end">
               <div class="position-relative overflow-hidden mt-4 pb-3 pt-4 mx-auto me-md-0" style="max-width: 632px;">
                 <div class="ratio ratio-1x1"></div>
-                <img src="assets/img/landing/app-showcase-1/hero-phone-1.png" class="rellax position-absolute top-0 start-0 zindex-2"  data-rellax-speed="1.6" data-disable-parallax-down="md" alt="Phone">
-                <img src="assets/img/landing/app-showcase-1/hero-phone-2.png" class="rellax position-absolute top-0 start-0"  data-rellax-speed="2.8" data-disable-parallax-down="md" alt="Phone">
+                <img src="assets/img/landing/app-showcase-1/hero-phone-1.png" class="light-mode-img rellax position-absolute top-0 start-0 zindex-2"  data-rellax-speed="1.6" data-disable-parallax-down="md" alt="Phone">
+                <img src="assets/img/landing/app-showcase-1/hero-phone-1-dark.png" class="dark-mode-img rellax position-absolute top-0 start-0 zindex-2"  data-rellax-speed="1.6" data-disable-parallax-down="md" alt="Phone">
+                <img src="assets/img/landing/app-showcase-1/hero-phone-2.png" class="light-mode-img rellax position-absolute top-0 start-0"  data-rellax-speed="2.8" data-disable-parallax-down="md" alt="Phone">
+                <img src="assets/img/landing/app-showcase-1/hero-phone-2-dark.png" class="dark-mode-img rellax position-absolute top-0 start-0"  data-rellax-speed="2.8" data-disable-parallax-down="md" alt="Phone">
               </div>
             </div>
           </div>
@@ -269,9 +298,11 @@
           <!-- Parallax gfx -->
           <div class="col-lg-5 d-none d-lg-block">
             <div class="position-relative" style="max-width: 348px;">
-              <img src="assets/img/landing/app-showcase-1/features/phone.png" alt="Phone">
+              <img src="assets/img/landing/app-showcase-1/features/phone.png" class="light-mode-img" alt="Phone">
+              <img src="assets/img/landing/app-showcase-1/features/phone-dark.png" class="dark-mode-img" alt="Phone">
               <div class="rellax position-absolute top-0" data-rellax-vertical-scroll-axis="x" data-rellax-horizontal-speed="0.75" data-disable-parallax-down="lg" style="max-width: 348px; right: -2.75rem;">
-                <img src="assets/img/landing/app-showcase-1/features/card.png" alt="Card">
+                <img src="assets/img/landing/app-showcase-1/features/card.png" class="light-mode-img" alt="Card">
+                <img src="assets/img/landing/app-showcase-1/features/card-dark.png" class="dark-mode-img" alt="Card">
               </div>
             </div>
           </div>
@@ -334,6 +365,24 @@
                 </div>
               </div>
 
+              <!-- Item -->
+              <div class="col pb-2 pb-xl-0 mb-4 mb-xl-5">
+                <div class="d-flex align-items-start ps-xl-3">
+                  <div class="d-table bg-secondary rounded-3 flex-shrink-0 p-3 mb-3" style="width: 80px; height: 80px;">
+                    <img src="assets/img/landing/app-showcase-1/features/message.png" alt="Templates" class="d-block w-100">
+                  </div>
+                  <div class="ps-4 ps-sm-3 ps-md-4">
+                    <h3 class="h5 pb-1 mb-2">Message Templates</h3>
+                    <p class="mb-0">Create and save custom templates for follow-ups, thank you notes, and other common communications.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div class="col pb-2 pb-xl-0 mb-4 mb-xl-5">
+                <div class="d-flex align-items-start pe-xl-3">
+
+              </div>
             </div>
           </div>
         </div>
@@ -356,15 +405,12 @@
 
             <!-- Phone frame -->
             <div class="position-absolute top-0 start-50 translate-middle-x h-100 w-100 w-md-33 zindex-5">
-              <div class="d-flex bg-repeat-0 bg-size-cover w-100 h-100 mx-auto" style="max-width: 328px; background-image: url(assets/img/landing/app-showcase-1/screens/phone-frame.png);"></div>
+              <div class="d-flex bg-repeat-0 bg-size-cover w-100 h-100 mx-auto" style="max-width: 328px;">
+                <img src="assets/img/landing/app-showcase-1/screens/phone-frame.png" class="w-100" alt="Phone frame">
+              </div>
             </div>
 
-            <!-- Phone screen -->
-            <div class="position-absolute top-0 start-50 translate-middle-x h-100 w-100 w-md-33">
-              <div class="d-flex bg-repeat-0 bg-size-cover w-100 h-100 mx-auto" style="max-width: 328px; background-image: url(assets/img/landing/app-showcase-1/screens/phone-screen.png);"></div>
-            </div>
-
-            <!-- Swiper slider -->
+            <!-- Swiper slider - keep your existing slider code -->
             <div class="swiper mobile-app-slider" data-swiper-options='{
               "slidesPerView": 1,
               "centeredSlides": true,
@@ -375,7 +421,7 @@
                 "type": "progressbar"
               },
               "navigation": {
-                "prevEl": "#prev-screen",
+                "prevEl": "#prev-screen", 
                 "nextEl": "#next-screen"
               },
               "breakpoints": {
@@ -386,24 +432,43 @@
 
                 <!-- Item -->
                 <div class="swiper-slide" data-swiper-tab="#text-1">
-                  <img src="assets/img/landing/app-showcase-1/screens/01.png" class="d-block mx-auto" width="328" alt="Screen">
+                  <div class="position-relative d-block mx-auto" style="width: 328px;">
+                    <img src="assets/img/landing/app-showcase-1/screens/01.png" class="light-mode-img w-100" alt="Screen">
+                    <img src="assets/img/landing/app-showcase-1/screens/01-dark.png" class="dark-mode-img w-100" alt="Screen">
+                  </div>
                 </div>
 
                 <!-- Item -->
                 <div class="swiper-slide" data-swiper-tab="#text-2">
-                  <img src="assets/img/landing/app-showcase-1/screens/02.png" class="d-block mx-auto" width="328" alt="Screen">
+                  <div class="position-relative d-block mx-auto" style="width: 328px;">
+                    <img src="assets/img/landing/app-showcase-1/screens/02.png" class="light-mode-img w-100" alt="Screen">
+                    <img src="assets/img/landing/app-showcase-1/screens/02-dark.png" class="dark-mode-img w-100" alt="Screen">
+                  </div>
                 </div>
 
                 <!-- Item -->
                 <div class="swiper-slide" data-swiper-tab="#text-3">
-                  <img src="assets/img/landing/app-showcase-1/screens/03.png" class="d-block mx-auto" width="328" alt="Screen">
+                  <div class="position-relative d-block mx-auto" style="width: 328px;">
+                    <img src="assets/img/landing/app-showcase-1/screens/03.png" class="light-mode-img w-100" alt="Screen">
+                    <img src="assets/img/landing/app-showcase-1/screens/03-dark.png" class="dark-mode-img w-100" alt="Screen">
+                  </div>
                 </div>
 
                 <!-- Item -->
                 <div class="swiper-slide" data-swiper-tab="#text-4">
-                  <img src="assets/img/landing/app-showcase-1/screens/04.png" class="d-block mx-auto" width="328" alt="Screen">
+                  <div class="position-relative d-block mx-auto" style="width: 328px;">
+                    <img src="assets/img/landing/app-showcase-1/screens/04.png" class="light-mode-img w-100" alt="Screen">
+                    <img src="assets/img/landing/app-showcase-1/screens/04-dark.png" class="dark-mode-img w-100" alt="Screen">
+                  </div>
                 </div>
 
+                <!-- New Item -->
+                <div class="swiper-slide" data-swiper-tab="#text-5">
+                  <div class="position-relative d-block mx-auto" style="width: 328px;">
+                    <img src="assets/img/landing/app-showcase-1/screens/05.png" class="light-mode-img w-100" alt="Screen">
+                    <img src="assets/img/landing/app-showcase-1/screens/05-dark.png" class="dark-mode-img w-100" alt="Screen">
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -434,6 +499,12 @@
               <div id="text-4" class="swiper-tab">
                 <h3 class="h4 pb-1 mb-2">Step 4. Monitor Your Progress</h3>
                 <p class="mb-0">View insights about your job search journey, track success rates, and identify which strategies are working best for you.</p>
+              </div>
+
+              <!-- Text 5 -->
+              <div id="text-5" class="swiper-tab">
+                <h3 class="h4 pb-1 mb-2">Step 5. Create Message Templates</h3>
+                <p class="mb-0">Build your library of custom message templates. Create and personalize templates for follow-up emails, thank you notes, and other communications to match your style.</p>
               </div>
             </div>
           </div>
@@ -540,6 +611,20 @@
                 <div id="q5" class="accordion-collapse collapse" aria-labelledby="q5-heading" data-bs-parent="#faq">
                   <div class="accordion-body fs-sm pt-0">
                     <p>Yes, Jobney is designed to handle multiple job searches simultaneously. You can organize applications by categories, companies, or positions. This makes it easy to manage applications across different industries or job types.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Add new FAQ item about templates before the last item -->
+              <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                <h2 class="accordion-header" id="q7-heading">
+                  <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q7" aria-expanded="false" aria-controls="q7">
+                    How do message templates work?
+                  </button>
+                </h2>
+                <div id="q7" class="accordion-collapse collapse" aria-labelledby="q7-heading" data-bs-parent="#faq">
+                  <div class="accordion-body fs-sm pt-0">
+                    <p>Message templates help you communicate efficiently and professionally. Create your own templates for common situations like follow-up emails, thank you notes, or offer negotiations. You can customize each template with placeholders for company names and other details, making it easy to maintain a consistent yet personal touch in all your communications.</p>
                   </div>
                 </div>
               </div>
